@@ -1,6 +1,6 @@
 class UI {
   constructor() {
-    this.profile = document.getElementById('profile');
+    this.profile = document.getElementById("profile");
   }
 
   // Display profile in UI
@@ -29,15 +29,15 @@ class UI {
     </div>
     <h3 class="page-heading mb-3">Latest Repos</h3>
     <div id="repos"></div
-    `
+    `;
   }
 
   // Show user repos
   showRepos(repos) {
-    let output = '';
+    let output = "";
 
     repos.forEach((repo) => {
-      output +=`
+      output += `
         <div class="card card-body mb-2">
           <div class="row">
             <div class="col-md-6">
@@ -50,11 +50,11 @@ class UI {
             </div>
           </div>
         </div>
-      `
+      `;
     });
 
     // Output repos
-    document.getElementById('repos').innerHTML = output;
+    document.getElementById("repos").innerHTML = output;
   }
 
   // Show alert message
@@ -62,15 +62,15 @@ class UI {
     // Clear any remaining alerts
     this.clearAlert();
     // Create div
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     // Add classes
     div.className = className;
     // Add text
     div.appendChild(document.createTextNode(message));
     // Get parent
-    const container = document.querySelector('.searchContainer');
+    const container = document.querySelector(".searchContainer");
     // Get search box
-    const search = document.querySelector('.search');
+    const search = document.querySelector(".search");
     // Insert alert
     container.insertBefore(div, search);
 
@@ -82,15 +82,17 @@ class UI {
 
   // Clear alert
   clearAlert() {
-    const currentAlert = document.querySelector('.alert');
+    const currentAlert = document.querySelector(".alert");
 
-    if(currentAlert) {
+    if (currentAlert) {
       currentAlert.remove();
     }
   }
 
   // Clear user profile
   clearProfile() {
-    this.profile.innerHTML = '';
+    this.profile.innerHTML = "";
   }
 }
+
+export default UI;
