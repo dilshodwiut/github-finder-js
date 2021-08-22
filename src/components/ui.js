@@ -91,7 +91,7 @@ class UI {
 
   // Clear user profile
   clearProfile() {
-    this.profile.innerHTML = "";
+    this.profile.innerHTML ? (this.profile.innerHTML = "") : null;
   }
 }
 
